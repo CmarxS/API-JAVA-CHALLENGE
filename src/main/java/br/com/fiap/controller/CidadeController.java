@@ -24,6 +24,11 @@ public class CidadeController {
         return cidadeService.listarTodos();
     }
 
+    @GetMapping("/{id}")
+    public Cidade listarPorId(@PathVariable Integer id) {
+        return cidadeService.listarPorId(id).orElse(null);
+    }
+
     @PutMapping("/{id}")
     public Cidade atualizar(@PathVariable Integer id, @RequestBody Cidade cidade) {
         return cidadeService.atualizar(id, cidade);

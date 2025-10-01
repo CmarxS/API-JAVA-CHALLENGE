@@ -37,4 +37,8 @@ public class SensorMotoService {
     public void deletar(Integer id) {
         repository.deleteById(id);
     }
+
+    public Optional<SensorMoto> listarPorId(Integer id) {
+        return repository.findById(id);
+    }
 }

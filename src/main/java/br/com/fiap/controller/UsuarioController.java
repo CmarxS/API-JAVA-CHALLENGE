@@ -25,6 +25,11 @@ public class UsuarioController {
         return usuarioService.listarTodos();
     }
 
+    @GetMapping("/{id}")
+    public Usuario listarPorId(@PathVariable Integer id) {
+        return usuarioService.listarPorId(id).orElse(null);
+    }
+
     @PutMapping("/{id}")
     public Usuario atualizar(@PathVariable Integer id, @RequestBody Usuario usuario) {
         return usuarioService.atualizar(id, usuario);

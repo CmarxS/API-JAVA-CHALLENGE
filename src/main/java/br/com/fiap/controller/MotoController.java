@@ -25,6 +25,11 @@ public class MotoController {
         return motoService.listarTodos();
     }
 
+    @GetMapping("/{id}")
+    public Moto listarPorId(@PathVariable Integer id) {
+        return motoService.listarPorId(id).orElse(null);
+    }
+
     @PutMapping("/{id}")
     public Moto atualizar(@PathVariable Integer id, @RequestBody Moto moto) {
         return motoService.atualizar(id, moto);

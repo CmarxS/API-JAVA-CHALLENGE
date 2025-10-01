@@ -38,4 +38,8 @@ public class MovimentoMotoService {
     public void deletar(Integer id) {
         repository.deleteById(id);
     }
+
+    public Optional<MovimentoMoto> listarPorId(Integer id) {
+        return repository.findById(id);
+    }
 }

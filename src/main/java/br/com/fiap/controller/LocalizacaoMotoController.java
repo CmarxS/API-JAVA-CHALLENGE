@@ -25,6 +25,11 @@ public class LocalizacaoMotoController {
         return localizacaoMotoService.listarTodos();
     }
 
+    @GetMapping("/{id}")
+    public LocalizacaoMoto listarPorId(@PathVariable Integer id) {
+        return localizacaoMotoService.listarPorId(id).orElse(null);
+    }
+
     @PutMapping("/{id}")
     public LocalizacaoMoto atualizar(@PathVariable Integer id, @RequestBody LocalizacaoMoto localizacaoMoto) {
         return localizacaoMotoService.atualizar(id, localizacaoMoto);

@@ -24,6 +24,11 @@ public class ClienteController {
         return clienteService.listarTodos();
     }
 
+    @GetMapping("/{id}")
+    public Cliente listarPorId(@PathVariable Integer id) {
+        return clienteService.listarPorId(id).orElse(null);
+    }
+
     @PutMapping("/{id}")
     public Cliente atualizar(@PathVariable Integer id, @RequestBody Cliente cliente) {
         return clienteService.atualizar(id, cliente);

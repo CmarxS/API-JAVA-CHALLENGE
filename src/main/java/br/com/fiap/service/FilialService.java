@@ -36,4 +36,8 @@ public class FilialService {
     public void deletar(Integer id) {
         repository.deleteById(id);
     }
+
+    public Optional<Filial> listarPorId(Integer id) {
+        return repository.findById(id);
+    }
 }

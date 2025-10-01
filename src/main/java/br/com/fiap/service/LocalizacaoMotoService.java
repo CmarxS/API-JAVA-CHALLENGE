@@ -39,4 +39,8 @@ public class LocalizacaoMotoService {
     public void deletar(Integer id) {
         repository.deleteById(id);
     }
+
+    public Optional<LocalizacaoMoto> listarPorId(Integer id) {
+        return repository.findById(id);
+    }
 }

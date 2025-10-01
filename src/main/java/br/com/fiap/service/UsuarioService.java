@@ -38,4 +38,8 @@ public class UsuarioService {
     public void deletar(Integer id) {
         repository.deleteById(id);
     }
+
+    public Optional<Usuario> listarPorId(Integer id) {
+        return repository.findById(id);
+    }
 }

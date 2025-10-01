@@ -35,4 +35,8 @@ public class EstadoService {
     public void deletar(Integer id) {
         repository.deleteById(id);
     }
+
+    public Optional<Estado> listarPorId(Integer id) {
+        return repository.findById(id);
+    }
 }

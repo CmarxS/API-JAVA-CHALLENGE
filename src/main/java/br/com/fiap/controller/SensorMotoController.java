@@ -25,6 +25,11 @@ public class SensorMotoController {
         return sensorMotoService.listarTodos();
     }
 
+    @GetMapping("/{id}")
+    public SensorMoto listarPorId(@PathVariable Integer id) {
+        return sensorMotoService.listarPorId(id).orElse(null);
+    }
+
     @PutMapping("/{id}")
     public SensorMoto atualizar(@PathVariable Integer id, @RequestBody SensorMoto sensorMoto) {
         return sensorMotoService.atualizar(id, sensorMoto);

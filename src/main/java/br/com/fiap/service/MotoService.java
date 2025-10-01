@@ -21,6 +21,10 @@ public class MotoService {
         return repository.findAll();
     }
 
+    public Optional<Moto> listarPorId(Integer id) {
+        return repository.findById(id);
+    }
+
     public Moto atualizar(Integer id, Moto motoAtualizada) {
         Moto existente = repository.findById(id).orElse(null);
         if (existente != null) {

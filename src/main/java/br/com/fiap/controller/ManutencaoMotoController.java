@@ -25,6 +25,11 @@ public class ManutencaoMotoController {
         return manutencaoMotoService.listarTodos();
     }
 
+    @GetMapping("/{id}")
+    public ManutencaoMoto listarPorId(@PathVariable Integer id) {
+        return manutencaoMotoService.listarPorId(id).orElse(null);
+    }
+
     @PutMapping("/{id}")
     public ManutencaoMoto atualizar(@PathVariable Integer id, @RequestBody ManutencaoMoto manutencaoMoto) {
         return manutencaoMotoService.atualizar(id, manutencaoMoto);

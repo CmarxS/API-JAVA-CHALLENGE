@@ -25,6 +25,11 @@ public class MovimentoMotoController {
         return movimentacaoMotoService.listarTodos();
     }
 
+    @GetMapping("/{id}")
+    public MovimentoMoto listarPorId(@PathVariable Integer id) {
+        return movimentacaoMotoService.listarPorId(id).orElse(null);
+    }
+
     @PutMapping("/{id}")
     public MovimentoMoto atualizar(@PathVariable Integer id, @RequestBody MovimentoMoto movimentoMoto) {
         return movimentacaoMotoService.atualizar(id, movimentoMoto);
@@ -37,4 +42,3 @@ public class MovimentoMotoController {
     }
 
 }
-

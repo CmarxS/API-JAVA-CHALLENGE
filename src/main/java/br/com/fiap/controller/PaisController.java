@@ -24,6 +24,11 @@ public class PaisController {
         return service.listarTodos();
     }
 
+    @GetMapping("/{id}")
+    public Pais listarPorId(@PathVariable Integer id) {
+        return service.listarPorId(id).orElse(null);
+    }
+
     @PutMapping("/{id}")
     public Pais atualizar(@PathVariable Integer id, @RequestBody Pais pais) {
         return service.atualizar(id, pais);

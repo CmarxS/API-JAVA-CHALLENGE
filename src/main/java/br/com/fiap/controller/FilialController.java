@@ -25,6 +25,11 @@ public class FilialController {
         return filialService.listarTodos();
     }
 
+    @GetMapping("/{id}")
+    public Filial listarPorId(@PathVariable Integer id) {
+        return filialService.listarPorId(id).orElse(null);
+    }
+
     @PutMapping("/{id}")
     public Filial atualizar(@PathVariable Integer id, @RequestBody Filial filial) {
         return filialService.atualizar(id, filial);

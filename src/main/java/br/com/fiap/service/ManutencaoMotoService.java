@@ -36,4 +36,8 @@ public class ManutencaoMotoService {
     public void deletar(Integer id) {
         repository.deleteById(id);
     }
+
+    public Optional<ManutencaoMoto> listarPorId(Integer id) {
+        return repository.findById(id);
+    }
 }

@@ -25,6 +25,11 @@ public class EstadoController {
         return estadoService.listarTodos();
     }
 
+    @GetMapping("/{id}")
+    public Estado listarPorId(@PathVariable Integer id) {
+        return estadoService.listarPorId(id).orElse(null);
+    }
+
     @PutMapping("/{id}")
     public Estado atualizar(@PathVariable Integer id, @RequestBody Estado estado) {
         return estadoService.atualizar(id, estado);
